@@ -36,7 +36,7 @@ public class Practice13GetTextBoundsView extends View {
         paint2.setTextSize(160);
 
         Rect rect = new Rect();
-        for (int i = 0; i < yOffset.length; i++) {
+        for (int i = 0; i < yOffset.length; i++) {            //每个字的大小范围不一样
             paint2.getTextBounds(texts[i], 0, texts[i].length(), rect);
             yOffset[i] -= (rect.top + rect.bottom)/2;
         }
