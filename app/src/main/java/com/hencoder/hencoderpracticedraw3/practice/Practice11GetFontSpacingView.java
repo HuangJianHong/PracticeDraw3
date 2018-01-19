@@ -10,6 +10,7 @@ import android.view.View;
 public class Practice11GetFontSpacingView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     String text = "Hello HenCoder";
+    private int space;
 
     public Practice11GetFontSpacingView(Context context) {
         super(context);
@@ -25,6 +26,7 @@ public class Practice11GetFontSpacingView extends View {
 
     {
         paint.setTextSize(60);
+        space = (int) paint.getFontSpacing();
     }
 
     @Override
@@ -32,7 +34,7 @@ public class Practice11GetFontSpacingView extends View {
         super.onDraw(canvas);
 
         // 使用 Paint.getFontSpacing() 来获取推荐的行距
-        float spacing = 20;
+        float spacing = space;
 
         canvas.drawText(text, 50, 100, paint);
 
